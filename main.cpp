@@ -2,36 +2,21 @@
 
 using namespace std;
 
- int r_print(int n)
+ void r_print(int n)
 {
-    if (n <= 0)
-    {
-
-    }
-    else if(n > 0)
-    {
-        cout << n-1 << endl;
-        return r_print(n-1);
-    }
-    /**
     if(n > 0)
     {
         cout << n << endl; // n-1 for n-1 to 0, n for n to 1
         r_print(n-1);
     }
-    */
 }
 
-int r_print_asc(int n)
+void r_print_asc(int n)
 {
-     if (n <= 0)
-    {
-        return -1;
-    }
-    else if(n > 0)
+    if(n >0)
     {
         r_print_asc(n-1);
-        cout << n-1 << endl;
+        cout << n << endl;
     }
 }
 
@@ -68,7 +53,7 @@ int main()
 
     //asc order
     cout << "***** asc *****" << endl;
-    r_print_asc(25);
+    r_print_asc(5);
     //cout << "Over!" << endl;
 
     //str match
