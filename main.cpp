@@ -2,21 +2,36 @@
 
 using namespace std;
 
- void r_print(int n)
+ int r_print(int n)
 {
+    if (n <= 0)
+    {
+
+    }
+    else if(n > 0)
+    {
+        cout << n-1 << endl;
+        return r_print(n-1);
+    }
+    /**
     if(n > 0)
     {
         cout << n << endl; // n-1 for n-1 to 0, n for n to 1
         r_print(n-1);
     }
+    */
 }
 
-void r_print_asc(int n)
+int r_print_asc(int n)
 {
-    if(n >0)
+     if (n <= 0)
+    {
+        return -1;
+    }
+    else if(n > 0)
     {
         r_print_asc(n-1);
-        cout << n << endl;
+        cout << n-1 << endl;
     }
 }
 
@@ -34,7 +49,7 @@ int str_expr()
 }
 
 //this function matches two string based on its pointers
-void match(char []str1_ptr, char []str2_ptr)
+void match(char str1_ptr, char str2_ptr)
 {
    cout << "matching strings\n" << str1_ptr << str2_ptr;
 }
@@ -43,7 +58,8 @@ int main()
 {
     cout << "Alter_for_for" << endl;
     //desc order
-//    r_print_asc(25);
+    cout << "***** desc *****" << endl;
+    r_print(25);
     //r_print(0);
     //r_print(-3);
     //r_print(7.8)
@@ -51,12 +67,13 @@ int main()
     //r_print("helloo")
 
     //asc order
-    //r_print_asc(5);
+    cout << "***** asc *****" << endl;
+    r_print_asc(25);
     //cout << "Over!" << endl;
 
     //str match
     char str1[] = "Siva";
     char str2[] = "Si";
-    match(str1, str2);
+    //match(str1, str2);
     return 0;
 }
